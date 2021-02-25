@@ -1,0 +1,127 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "info",
+  "description": "Movie data",
+  "type": "object",
+  "properties": {
+    "_id": {
+      "description": "The unique identifier for a movie, which will be given in mongodb",
+      "type": "objectId"
+    },
+    "movie_id": {
+      "description": "unique movie id, given by devoloper",
+      "type": "integer"
+    },
+    "title": {
+      "description": "電影標題",
+      "type": "string"
+    },
+    "runtime": {
+      "description": "電影執行時間，以分鐘計算",
+      "type": "integer"
+    },
+    "release_date": {
+      "description": "電影在台灣上映時間，以utc timestamp 儲存",
+      "type": "float",
+      "format": "timestamp"
+    },
+    "poster_path": {
+      "description": "海報網址，之後要下載",
+      "type": "string",
+      "format": "url"
+    },
+    "origin_title": {
+      "description": "原文標題",
+      "type": "string"
+    },
+    "imdb_rate": {
+      "description": "imdb 分數",
+      "type": "float"
+    },
+    "image_path": {
+      "description": "電影劇照",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "url"
+      }
+    },
+    "source": {
+      "description": "資料來源",
+      "type": "object",
+      "properties": {
+        "web_name": {
+          "description": "網站名",
+          "type": "string"
+        },
+        "web_id": {
+          "description": "網站ID",
+          "type": "string"
+        }
+      }
+    },
+    "genre": {
+      "description": "電影分類",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "director": {
+      "description": "導演",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name_tw": {
+            "description": "中文名（或譯名）",
+            "type": "string"
+          },
+          "name_en": {
+            "description": "英文名（或原名）",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "content": {
+      "description": "影片簡介",
+      "type": "string"
+    },
+    "company": {
+      "description": "發行公司",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name_tw": {
+            "description": "中文名（或譯名）",
+            "type": "string"
+          },
+          "name_en": {
+            "description": "英文名（或原名）",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "cast": {
+      "description": "演員陣容",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name_tw": {
+            "description": "中文名（或譯名）",
+            "type": "string"
+          },
+          "name_en": {
+            "description": "英文名（或原名）",
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": ["_id", "content", "title", "poster_path", "release_date", "runtime", "movie_id"]
+}
