@@ -57,6 +57,10 @@
         "web_id": {
           "description": "網站ID",
           "type": "string"
+        },
+        "web_url": {
+          "description": "網址",
+          "type": "string"
         }
       }
     },
