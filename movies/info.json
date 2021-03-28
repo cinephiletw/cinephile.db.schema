@@ -48,19 +48,22 @@
     },
     "source": {
       "description": "資料來源",
-      "type": "object",
-      "properties": {
-        "web_name": {
-          "description": "網站名",
-          "type": "string"
-        },
-        "web_id": {
-          "description": "網站ID",
-          "type": "string"
-        },
-        "web_url": {
-          "description": "網址",
-          "type": "string"
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "web_name": {
+            "description": "網站名",
+            "type": "string"
+          },
+          "web_id": {
+            "description": "網站ID",
+            "type": "string"
+          },
+          "web_url": {
+            "description": "網址",
+            "type": "string"
+          }
         }
       }
     },
